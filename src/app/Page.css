@@ -1,0 +1,44 @@
+/* Estilos */
+.container {
+    display: flex;
+    height: 100vh;/* Ocupa toda la altura de la pantalla */
+}
+
+.left {
+    flex: 1;
+    max-width: 50%; /* Ocupa la mitad del ancho */
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 10px;
+    margin-right: 5px;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;/* Apila los elementos */
+    gap: 10px;
+    margin: 10px;
+    margin-left: 5px;
+}
+
+.top {
+    flex: 1;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.bottom {
+    flex: 1;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;    
+}
