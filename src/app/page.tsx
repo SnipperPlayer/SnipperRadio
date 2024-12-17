@@ -1,6 +1,6 @@
 //import Image from "next/image";
-import Playboard from './Playboard';
 import './Page.css'
+import Topboard from './components/Topboard';
 
 export default function Home() {
   return (
@@ -10,7 +10,8 @@ export default function Home() {
       </div>
       <div className="right">
         <div className="top">
-          TOP text
+          {/* TOP text */}
+          <Topboard/>
         </div>
         <div className="bottom">
           Bottom text
