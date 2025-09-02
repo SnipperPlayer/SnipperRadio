@@ -3,7 +3,7 @@ import React from 'react'
 function PlayerCard({ cover = 'N/A', songTitle = `Song Title`, year = '2000', albumTitle = 'Album Title', artistName= 'Artist Name' }) {
     return (
         <>
-            <div className='relative bg-[#e0ded8] h-full w-full lg:w-4/5 p-3 min-h-[90dvh]'>
+            <div className='relative bg-[#e0ded8] h-svh w-full lg:w-4/5 p-3 min-h-[90dvh]'>
                 <figure className="flex flex-col gap-3">
                     <img className="object-contain aspect-square w-full" src={cover} alt='AlbumImage' />
                     <figcaption className="space-y-1">
