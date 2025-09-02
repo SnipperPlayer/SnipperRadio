@@ -1,38 +1,31 @@
-// import React from 'react'
+import React from 'react';
 
-// function AlbumCard({ cover = 'N/A', title = 'N/A', content = 'No content' }) {
-//     return (
-//         <>
-//             <div className='bg-yellow-300 rounded-lg shadow-md flex flex-col justify-center items-center p-2'>
-//                 <img class="object-contain aspect-square" src={cover} alt='AlbumImage'/>
-//                 <h2 className='text-xl font-bold'>{title}</h2>
-//                 <p className='text-base'>{content}</p>
-//             </div>
-//         </>
-//     )
-// }
-
-// export default AlbumCard
-
-
-function AlbumCard({ cover = 'N/A', title = 'N/A', content = 'No content' }) {
+function AlbumCard({ cover = 'N/A', topNumber = '#', title = 'N/A', author = 'No Author', year = '0000' }) {
     return (
-        <div className="flex flex-col justify-center items-center p-2 text-white">
-            <div className="relative mx-auto rotate-[2deg] drop-shadow-lg">
-                <img
-                    src={cover}
-                    alt="AlbumImage"
-                    className="w-full shadow-inner object-cover"
-                />
-
-                {/* Cinta adhesiva - esquinas */}
-                <div className="absolute top-[-10px] left-[-10px] w-[60px] h-[20px] bg-yellow-100/80 shadow rotate-[-15deg] z-10" />
-                <div className="absolute bottom-[-10px] right-[-10px] w-[60px] h-[20px] bg-yellow-100/80 shadow rotate-[-12deg] z-10" />
-            </div>
-
-            <h2 className="text-xl font-bold mt-4">{title}</h2>
-        </div>
+        <figure className="relative bg-black border-gray-400 border-2 p-3 w-full h-auto hover:scale-[1.09] transition-transform duration-300" /*w-72 max-w-sm*/>
+            <div className="absolute -top-2 left-3 w-[60px] h-[15px] -rotate-3 [background:repeating-linear-gradient(-45deg,#f5d000_0,#f5d000_8px,black_8px,black_16px)]"></div>
+            <img
+                src={cover}
+                alt="AlbumImage"
+                className="w-full aspect-square object-cover" //shadow-2xl shadow-indigo-600/50 mt-4 mb-4
+            />
+            <figcaption className="mt-3 mb-3 text-center">
+                <h3 className="text-white text-2xl">
+                    {title}
+                </h3>
+                <p className="text-lg text-white font-medium">
+                    {author}
+                </p>
+                <p className="text-lg text-gray-300 font-medium">
+                    {year}
+                </p>
+            </figcaption>
+            <span className="absolute -bottom-2 right-3 bg-[#0074d9] text-white text-sm px-2 py-1">
+                TOP {topNumber}
+            </span>
+        </figure>
     )
 }
 
 export default AlbumCard
+

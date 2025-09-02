@@ -25,9 +25,9 @@ function LandingPage() {
                 <div className="gap-2 flex flex-col lg:w-1/2">
                     <div className="bg-black/50 w-full h-auto flex flex-row justify-center items-center lg:h-1/2 border-y-8 border-dashed border-yellow-300">
                         <div className="p-3 gap-5 w-full flex flex-col justify-center items-center md:flex-row lg:flex-row">
-                            <AlbumCard cover={DuaLipaCover} title='Top 1' content="Contenido 1" />
-                            <AlbumCard cover={VoiceNotesCover} title='Top 2' content="Contenido 2" />
-                            <AlbumCard cover={HurryUpTomorrowCover} title='Top 3' content="Contenido 3" />
+                            <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa - Dua Lipa" content="Pop retro con toques de synth y dance, destacando la voz única y la estética visual de los 80s." />
+                            <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes - Charlie Puth" content="Álbum con sonidos R&B moderno y sintetizadores retro, ideal para playlists nocturnas." />
+                            <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow - The Weeknd" content="Fusión de soul y funk retro, con grooves cálidos y letras introspectivas." />
                         </div>
                     </div>
                     <div className="relative bg-[#ebd4b2] w-full h-auto flex justify-center"> {/*lg:h-1/2*/}
@@ -61,23 +61,3 @@ function LandingPage() {
 
 export default LandingPage
 
-
-{/* 
-<div className="flex justify-center items-center h-screen">
-    <div className="flex flex-col gap-2 text-center lg:flex-row w-full max-w-4xl p-4">
-
-        <div className="bg-gray-200 rounded-xl h-[200px] lg:h-auto lg:w-1/2 flex items-center justify-center">
-            w-1/2
-        </div>
-        <div className="flex flex-col gap-2 lg:w-1/2">
-            <div className="w-full bg-sky-500 rounded-xl h-[100px] lg:h-1/2 flex items-center justify-center">
-                w-2.1
-            </div>
-            <div className="w-full bg-emerald-500 rounded-xl h-[100px] lg:h-1/2 flex items-center justify-center">
-                w-2.1
-            </div>
-        </div>
-
-    </div>
-</div> 
-*/}

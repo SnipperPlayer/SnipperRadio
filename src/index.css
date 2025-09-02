@@ -9,9 +9,7 @@
   /* background-position: center; /* Se usa para repetir la imagen de fondo */
   /* object-fit: contain; */
 
-
-
-  font-family: 'Helvetica';
+  font-family: 'Helvetica', 'Courier New', Courier;
   font-style: italic;
   font-weight: 900;
   /* font-weight: bold; */
