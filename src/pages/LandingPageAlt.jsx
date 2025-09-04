@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+// Import Swiper React components
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// // import required modules
+// import { EffectCoverflow } from 'swiper/modules';
+
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/effect-coverflow';
 
 import NoteCard from '../components/Notes/NoteCard.jsx';
 import AlbumCard from '../components/Albums/AlbumCard.jsx';
@@ -32,20 +40,18 @@ function LandingPageAlt() {
     //     }
     //     setCount(count - 1)
     // };
-  const [activeIndex, setActiveIndex] = useState(0);
-
 
     return (
         <>
             <div className="flex flex-col justify-center items-center">
                 {/* Sección de títulos */}
-                <header className="flex flex-col justify-center items-center py-4">
-                    <h1 className="text-3xl md:text-6xl text-white text-center text-shadow-[0_0_7px_#fff]">DIGITAL MEMORIES</h1>
+                <header className="flex flex-col justify-center items-center my-4 md:my-4">
+                    <h1 className="text-3xl md:text-6xl text-white text-center text-shadow-[0_0_10px_#fff]">DIGITAL MEMORIES</h1>
                     <h2 className="text-xl md:text-3xl text-white text-center bg-red-600 px-2">Radio Music</h2>
                 </header>
 
-
-                <div className="w-full min-w-md max-w-6xl h-auto my-25 md:my-6 rotate-90 md:rotate-0">
+                {/* Imagen de cassette */}
+                <div className="w-full min-w-md max-w-4xl h-auto my-25 md:my-6 rotate-90 md:rotate-0">
                     <Cassette />
                 </div>
 
@@ -94,7 +100,6 @@ function LandingPageAlt() {
                     </article>
                 </section>
 
-
                 {/* <button onClick={handlePrev} className="size-20 bg-indigo-600">Prev</button>
                 <button onClick={handleNext} className="size-20 bg-indigo-600">Next</button>
                 <article className="flex flex-row gap-10 max-w-7xl w-full mx-auto my-6 overflow-hidden ">
@@ -115,3 +120,37 @@ function LandingPageAlt() {
 }
 
 export default LandingPageAlt
+//     < Swiper
+// effect = { 'coverflow'}
+// grabCursor = { true}
+// slidesPerView = { 3}
+// spaceBetween = { 5}
+// coverflowEffect = {{
+//     rotate: 50,
+//         stretch: 0,
+//             depth: 100,
+//                 modifier: 1,
+//                     slideShadows: true,
+//                         }}
+// modules = { [EffectCoverflow]}
+// className = "mySwiper max-w-7xl w-full mb-6"
+//     >
+//                         <SwiperSlide>
+//                             <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa (Album)" author="Dua Lipa" year="2017" />
+//                         </SwiperSlide>
+//                         <SwiperSlide>
+//                             <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes" author="Charlie Puth" year="2018" />
+//                         </SwiperSlide>
+//                         <SwiperSlide>
+//                             <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow" author="The Weeknd" year="2025" />
+//                         </SwiperSlide>
+//                         <SwiperSlide>
+//                             <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa (Album)" author="Dua Lipa" year="2017" />
+//                         </SwiperSlide>
+//                         <SwiperSlide>
+//                             <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes" author="Charlie Puth" year="2018" />
+//                         </SwiperSlide>
+//                         <SwiperSlide>
+//                             <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow" author="The Weeknd" year="2025" />
+//                         </SwiperSlide>
+//                     </Swiper >

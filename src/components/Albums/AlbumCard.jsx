@@ -20,7 +20,7 @@ function AlbumCard({ cover = 'N/A', topNumber = '#', title = 'N/A', author = 'No
                     {year}
                 </p>
             </figcaption>
-            <span className="absolute -bottom-2 right-3 bg-[#0074d9] text-white text-sm px-2 py-1">
+            <span className="absolute -bottom-2 right-3 bg-[#0074d9] text-white text-md px-2 py-1 transform rotate-3">
                 TOP {topNumber}
             </span>
         </figure>
