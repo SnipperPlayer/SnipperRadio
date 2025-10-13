@@ -9,8 +9,8 @@ import {
 
 const router = createHashRouter( //createBrowserRouter(No gh-pages)
   createRoutesFromElements([
-    <Route path="/" element={<LandingPage />} />,
-    <Route path="/alt" element={<LandingPageAlt />} />,
+    <Route path="/" element={<LandingPageAlt />} />,
+    <Route path="/alt" element={<LandingPage />} />,
     <Route path="/contact" element={<div>Contact Page</div>} />,
   ])
 );

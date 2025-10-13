@@ -2,7 +2,7 @@ import React from 'react';
 
 function AlbumCard({ cover = 'N/A', topNumber = '#', title = 'N/A', author = 'No Author', year = '0000' }) {
     return (
-        <figure className="relative bg-black border-gray-400 border-2 p-3 w-full h-auto hover:scale-[1.09] transition-transform duration-300" /*w-72 max-w-sm*/>
+        <figure className="relative bg-black border-gray-400 border-2 p-3 w-full h-auto" /*w-72 max-w-sm hover:scale-[1.09] transition-transform duration-300*/>
             <div className="absolute -top-2 left-3 w-[60px] h-[15px] -rotate-3 [background:repeating-linear-gradient(-45deg,#f5d000_0,#f5d000_8px,black_8px,black_16px)]"></div>
             <img
                 src={cover}

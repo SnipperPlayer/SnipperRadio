@@ -3,10 +3,6 @@ import AlbumCard from '../components/Albums/AlbumCard.jsx'
 import NoteCard from '../components/Notes/NoteCard.jsx'
 import PlayerCard from '../components/Player/PlayerCard.jsx'
 
-import DuaLipaCover from '../../src/assets/AlbumsCover/DuaLipaCover.jpg'
-import VoiceNotesCover from '../../src/assets/AlbumsCover/VoiceNotesCover.jpg'
-import HurryUpTomorrowCover from '../../src/assets/AlbumsCover/HurryUpTomorrowCover.jpg'
-
 import wrinkleTexture from '../assets/tl.png'
 
 
@@ -20,14 +16,14 @@ function LandingPage() {
         <>
             <div className="text-center gap-2 p-4 h-screen flex flex-col lg:flex-row">
                 <div className="h-auto lg:w-1/2 flex flex-col justify-center items-center">
-                    <PlayerCard cover={DuaLipaCover} />
+                    <PlayerCard cover={"./AlbumsCover/VoiceNotesCover.jpg"} />
                 </div>
                 <div className="gap-2 flex flex-col lg:w-1/2">
                     <div className="bg-black/50 w-full h-auto flex flex-row justify-center items-center lg:h-1/2 border-y-8 border-dashed border-yellow-300">
                         <div className="p-3 gap-5 w-full flex flex-col justify-center items-center md:flex-row lg:flex-row">
-                            <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa - Dua Lipa" content="Pop retro con toques de synth y dance, destacando la voz única y la estética visual de los 80s." />
-                            <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes - Charlie Puth" content="Álbum con sonidos R&B moderno y sintetizadores retro, ideal para playlists nocturnas." />
-                            <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow - The Weeknd" content="Fusión de soul y funk retro, con grooves cálidos y letras introspectivas." />
+                            <AlbumCard cover={"./AlbumsCover/VoiceNotesCover.jpg"} topNumber="1" title="Dua Lipa - Dua Lipa" content="Pop retro con toques de synth y dance, destacando la voz única y la estética visual de los 80s." />
+                            <AlbumCard cover={"./AlbumsCover/VoiceNotesCover.jpg"} topNumber="2" title="Voicenotes - Charlie Puth" content="Álbum con sonidos R&B moderno y sintetizadores retro, ideal para playlists nocturnas." />
+                            <AlbumCard cover={"./AlbumsCover/VoiceNotesCover.jpg"} topNumber="3" title="Hurry Up Tomorrow - The Weeknd" content="Fusión de soul y funk retro, con grooves cálidos y letras introspectivas." />
                         </div>
                     </div>
                     <div className="relative bg-[#ebd4b2] w-full h-auto flex justify-center"> {/*lg:h-1/2*/}

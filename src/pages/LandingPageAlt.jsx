@@ -1,12 +1,4 @@
 import React, { useState } from 'react';
-// Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// // import required modules
-// import { EffectCoverflow } from 'swiper/modules';
-
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/effect-coverflow';
 
 import NoteCard from '../components/Notes/NoteCard.jsx';
 import AlbumCard from '../components/Albums/AlbumCard.jsx';
@@ -14,11 +6,8 @@ import AlbumCard from '../components/Albums/AlbumCard.jsx';
 import wrinkleTexture from '../assets/tl.png';
 import Cassette from '../components/Cassette/Cassette.jsx';
 
-import DuaLipaCover from '../assets/AlbumsCover/DuaLipaCover.jpg';
-import VoiceNotesCover from '../assets/AlbumsCover/VoiceNotesCover.jpg';
-import HurryUpTomorrowCover from '../assets/AlbumsCover/HurryUpTomorrowCover.jpg';
-
 import notesdata from "../database/notes.json";
+import topalbumdata from "../database/topalbum.json";
 
 function LandingPageAlt() {
     // const [count, setCount] = useState(0);
@@ -27,7 +16,7 @@ function LandingPageAlt() {
     // const coverOne = covers[count];
 
     // const handleNext = () => {
-    //     if (count + 1 >= covers.length) {
+    //     if (count + 1 >= topalbumdata.length) {
     //         setCount(0);
     //         return;
     //     }
@@ -35,12 +24,11 @@ function LandingPageAlt() {
     // };
     // const handlePrev = () => {
     //     if (count - 1 < 0) {
-    //         setCount(covers.length - 1);
+    //         setCount(topalbumdata.length - 1);
     //         return;
     //     }
     //     setCount(count - 1)
     // };
-
     return (
         <>
             <div className="flex flex-col justify-center items-center">
@@ -93,11 +81,19 @@ function LandingPageAlt() {
                         TOP WEEKLYS ALBUMS
                     </h2>
                     {/* Album Grid */}
-                    <article className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full my-6">
-                        <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa (Album)" author="Dua Lipa" year="2017" />
-                        <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes" author="Charlie Puth" year="2018" />
-                        <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow" author="The Weeknd" year="2025" />
+                    <article className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-10 w-full my-6" >
+                        {topalbumdata.map((item, index) => (
+                            <AlbumCard key={index} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
+                        ))}
                     </article>
+                    {/* Carrusel de Albums */}
+                    <div class="md:hidden overflow-x-auto snap-x snap-mandatory scroll-smooth flex w-full gap-3 py-2 overflow-y-hidden">
+                        {topalbumdata.map((item, index) => (
+                            <div class="snap-start shrink-0 w-[95%] sm:w-[50%] md:w-[40%]">
+                                <AlbumCard key={index} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
+                            </div>
+                        ))}
+                    </div>
                 </section>
 
                 {/* <button onClick={handlePrev} className="size-20 bg-indigo-600">Prev</button>
