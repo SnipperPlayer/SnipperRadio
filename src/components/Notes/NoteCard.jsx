@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-function NoteCard({ title = 'No title', content = 'No content' }) {
+function NoteCard({ title = 'No title', content = 'No content', setShowModal= true }) {
+
     return (
         <>
             {/* <li className="grid md:grid-cols-[12%_88%]">
@@ -17,7 +18,7 @@ function NoteCard({ title = 'No title', content = 'No content' }) {
             </li> */}
             <li
                 className="hover:bg-gray-100/50 hover:pl-5 hover:pr-5 duration-200 cursor-pointer flex justify-between items-center"
-                onClick={() => alert(`Título: ${title}\n\nContenido: ${content}`)}
+                onClick={() => setShowModal(true)}
             >
                 <p className="text-gray-600 text-start text-lg font-semibold">
                     {title}

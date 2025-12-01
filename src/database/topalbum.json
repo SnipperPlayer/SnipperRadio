@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "cover": "./AlbumsCover/DuaLipaCover.jpg",
+        "cover": "/SnipperRadio/AlbumsCover/DuaLipaCover.jpg",
         "topNumber": "1",
         "title": "Dua Lipa (Album)",
         "author": "Dua Lipa",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "cover": "./AlbumsCover/VoiceNotesCover.jpg",
+        "cover": "/SnipperRadio/AlbumsCover/VoiceNotesCover.jpg",
         "topNumber": "2",
         "title": "Voicenotes",
         "author": "Charlie Puth",
@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "cover": "./AlbumsCover/HurryUpTomorrowCover.jpg",
+        "cover": "/SnipperRadio/AlbumsCover/HurryUpTomorrowCover.jpg",
         "topNumber": "3",
         "title": "Hurry Up Tomorrow",
         "author": "The Weeknd",

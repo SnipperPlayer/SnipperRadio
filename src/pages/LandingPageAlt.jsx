@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import NoteCard from '../components/Notes/NoteCard.jsx';
 import AlbumCard from '../components/Albums/AlbumCard.jsx';
+import Modal from '../components/Notes/Modal.jsx';
 
 import wrinkleTexture from '../assets/tl.png';
 import Cassette from '../components/Cassette/Cassette.jsx';
@@ -29,6 +30,8 @@ function LandingPageAlt() {
     //     }
     //     setCount(count - 1)
     // };
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <>
             <div className="flex flex-col justify-center items-center">
@@ -39,10 +42,35 @@ function LandingPageAlt() {
                 </header>
 
                 {/* Imagen de cassette */}
-                <div className="w-full min-w-md max-w-4xl h-auto my-25 md:my-6 rotate-90 md:rotate-0">
+                <div className="w-full max-w-4xl h-auto my-3 md:my-6 rotate-0 md:rotate-0">
                     <Cassette />
                 </div>
 
+                {/* <hr class="border-0 h-4 w-full max-w-7xl [background:repeating-linear-gradient(-45deg,yellow_0,yellow_25px,black_25px,black_50px)]" /> */}
+
+                {/* Sección de Top Albums */}
+                <section className="flex flex-col justify-center items-center max-w-7xl w-[90%] md:w-[95%] mx-auto my-3">
+                    {/* Titulo */}
+                    <h2 className="text-2xl md:text-5xl text-white text-center px-4 py-2 md:px-6 md:py-3 bg-[url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-3&color=4f39f6')]">
+                        TOP WEEKLYS ALBUMS
+                    </h2>
+                    {/* Album Grid */}
+                    <article className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-10 w-full my-6" >
+                        {topalbumdata.map((item) => (
+                            <AlbumCard key={item.id} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
+                        ))}
+                    </article>
+                    {/* Carrusel de Albums */}
+                    <div class="md:hidden overflow-x-auto snap-x snap-mandatory scroll-smooth flex w-full gap-3 py-2 overflow-y-hidden">
+                        {topalbumdata.map((item) => (
+                            <div class="snap-start shrink-0 w-[95%] sm:w-[50%] md:w-[40%]">
+                                <AlbumCard key={item.id} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+                
+                {/* Sección de Notes */}
                 <section className="relative flex flex-col justify-center items-center max-w-7xl w-[90%] md:w-[95%] mx-auto my-3">
                     {/* Titulo */}
                     <h2 className="text-2xl md:text-5xl text-white text-center px-4 py-2 md:px-6 md:py-3 bg-[url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-3&color=green-500')] ">
@@ -50,7 +78,7 @@ function LandingPageAlt() {
                     </h2>
 
                     {/* Titulo Latest News */}
-                    <div className="absolute bg-red-700 z-10 top-[78px] md:top-[100px] w-full h-10 pl-[40px] md:pl-[90px] flex items-center">
+                    <div className="absolute bg-red-700 z-1 top-[78px] md:top-[100px] w-full h-10 pl-[40px] md:pl-[90px] flex items-center">
                         <h3 className="text-white text-2xl md:text-3xl">Latest News:</h3>
                     </div>
 
@@ -60,7 +88,7 @@ function LandingPageAlt() {
                     >
                         <ul className="leading-[28px] pt-[82.8px] pl-[40px] md:pl-[90px] pr-[10px]" /*font-normal tracking-[1px] word-spacing-[4px]*/>
                             {notesdata.map((note, index) => (
-                                <NoteCard key={index} title={note.title} content={note.content} />
+                                <NoteCard key={index} title={note.title} content={note.content} setShowModal={setShowModal} />
                             ))}
                         </ul>
                         {/* Textura arrugada */}
@@ -70,31 +98,14 @@ function LandingPageAlt() {
                         {/* Línea vertical roja */}
                         <div className="absolute top-0 h-full w-[3px] left-[30px] md:left-[80px] bg-[rgba(255,0,0,0.4)]" />
                     </article>
+                    {showModal && (
+                        <div className="fixed inset-0 w-full h-full flex items-end justify-center z-10">
+                            <div className="fixed w-full h-full bg-black opacity-50" onClick={() => setShowModal(false)}></div>
+                            <Modal setShowModal={setShowModal} title="Note Title" content="This is the content of the note displayed in the modal." />
+                        </div>
+                    )}
                 </section>
 
-                {/* <hr class="border-0 h-4 w-full max-w-7xl [background:repeating-linear-gradient(-45deg,yellow_0,yellow_25px,black_25px,black_50px)]" /> */}
-
-                {/* Sección de Top Albums */}
-                <section className="flex flex-col justify-center items-center max-w-7xl w-[90%] md:w-[95%] mx-auto my-6">
-                    {/* Titulo */}
-                    <h2 className="text-2xl md:text-5xl text-white text-center px-4 py-2 md:px-6 md:py-3 bg-[url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-3&color=4f39f6')]">
-                        TOP WEEKLYS ALBUMS
-                    </h2>
-                    {/* Album Grid */}
-                    <article className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-10 w-full my-6" >
-                        {topalbumdata.map((item, index) => (
-                            <AlbumCard key={index} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
-                        ))}
-                    </article>
-                    {/* Carrusel de Albums */}
-                    <div class="md:hidden overflow-x-auto snap-x snap-mandatory scroll-smooth flex w-full gap-3 py-2 overflow-y-hidden">
-                        {topalbumdata.map((item, index) => (
-                            <div class="snap-start shrink-0 w-[95%] sm:w-[50%] md:w-[40%]">
-                                <AlbumCard key={index} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
-                            </div>
-                        ))}
-                    </div>
-                </section>
 
                 {/* <button onClick={handlePrev} className="size-20 bg-indigo-600">Prev</button>
                 <button onClick={handleNext} className="size-20 bg-indigo-600">Next</button>

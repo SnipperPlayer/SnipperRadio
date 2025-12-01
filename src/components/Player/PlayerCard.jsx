@@ -18,7 +18,7 @@ function PlayerCard({ cover = 'N/A', songTitle = `Song Title`, year = '2000', al
                     </figcaption>
                 </figure>
                 {/* Cinta adhesiva - esquinas */}
-                <div className="absolute top-[-10px] left-[-10px] w-[60px] h-[20px] bg-yellow-100/80 shadow rotate-[-12deg] z-10" />
+                <div className="absolute top-[-10px] left-[-10px] w-[60px] h-[20px] bg-yellow-100/80 shadow z-10" />
                 <div className="absolute bottom-[-10px] right-[-10px] w-[60px] h-[20px] bg-yellow-100/80 shadow rotate-[-12deg] z-10" />
             </div>
         </>
