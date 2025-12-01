@@ -42,7 +42,7 @@ function LandingPageAlt() {
                 </header>
 
                 {/* Imagen de cassette */}
-                <div className="w-full max-w-4xl h-auto my-3 md:my-6 rotate-0 md:rotate-0">
+                <div className="w-full md:max-w-4xl h-auto px-4 md:px-0 my-3 md:my-6 rotate-0 md:rotate-0">
                     <Cassette />
                 </div>
 
