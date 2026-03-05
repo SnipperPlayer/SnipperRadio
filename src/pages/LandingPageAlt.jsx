@@ -30,7 +30,7 @@ function LandingPageAlt() {
     //     }
     //     setCount(count - 1)
     // };
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(null);
 
     return (
         <>
@@ -88,7 +88,7 @@ function LandingPageAlt() {
                     >
                         <ul className="leading-[28px] pt-[82.8px] pl-[40px] md:pl-[90px] pr-[10px]" /*font-normal tracking-[1px] word-spacing-[4px]*/>
                             {notesdata.map((note, index) => (
-                                <NoteCard key={index} title={note.title} content={note.content} setShowModal={setShowModal} />
+                                <NoteCard key={index} title={note.title} content={note.content} setShowModal={() => setShowModal(note)} />
                             ))}
                         </ul>
                         {/* Textura arrugada */}
@@ -99,9 +99,13 @@ function LandingPageAlt() {
                         <div className="absolute top-0 h-full w-[3px] left-[30px] md:left-[80px] bg-[rgba(255,0,0,0.4)]" />
                     </article>
                     {showModal && (
-                        <div className="fixed inset-0 w-full h-full flex items-end justify-center z-10">
-                            <div className="fixed w-full h-full bg-black opacity-50" onClick={() => setShowModal(false)}></div>
-                            <Modal setShowModal={setShowModal} title="Note Title" content="This is the content of the note displayed in the modal." />
+                        <div className="fixed inset-0 w-full h-full flex items-end justify-center z-10 overflow-hidden">
+                            <div className="fixed w-full h-full bg-black opacity-50" onClick={() => setShowModal(null)}></div>
+                            <Modal
+                                setShowModal={() => setShowModal(null)}
+                                title={showModal.title}
+                                content={showModal.content}
+                            />
                         </div>
                     )}
                 </section>
@@ -127,37 +131,3 @@ function LandingPageAlt() {
 }
 
 export default LandingPageAlt
-//     < Swiper
-// effect = { 'coverflow'}
-// grabCursor = { true}
-// slidesPerView = { 3}
-// spaceBetween = { 5}
-// coverflowEffect = {{
-//     rotate: 50,
-//         stretch: 0,
-//             depth: 100,
-//                 modifier: 1,
-//                     slideShadows: true,
-//                         }}
-// modules = { [EffectCoverflow]}
-// className = "mySwiper max-w-7xl w-full mb-6"
-//     >
-//                         <SwiperSlide>
-//                             <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa (Album)" author="Dua Lipa" year="2017" />
-//                         </SwiperSlide>
-//                         <SwiperSlide>
-//                             <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes" author="Charlie Puth" year="2018" />
-//                         </SwiperSlide>
-//                         <SwiperSlide>
-//                             <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow" author="The Weeknd" year="2025" />
-//                         </SwiperSlide>
-//                         <SwiperSlide>
-//                             <AlbumCard cover={DuaLipaCover} topNumber="1" title="Dua Lipa (Album)" author="Dua Lipa" year="2017" />
-//                         </SwiperSlide>
-//                         <SwiperSlide>
-//                             <AlbumCard cover={VoiceNotesCover} topNumber="2" title="Voicenotes" author="Charlie Puth" year="2018" />
-//                         </SwiperSlide>
-//                         <SwiperSlide>
-//                             <AlbumCard cover={HurryUpTomorrowCover} topNumber="3" title="Hurry Up Tomorrow" author="The Weeknd" year="2025" />
-//                         </SwiperSlide>
-//                     </Swiper >
