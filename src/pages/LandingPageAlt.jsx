@@ -49,7 +49,7 @@ function LandingPageAlt() {
                 {/* <hr class="border-0 h-4 w-full max-w-7xl [background:repeating-linear-gradient(-45deg,yellow_0,yellow_25px,black_25px,black_50px)]" /> */}
 
                 {/* Sección de Top Albums */}
-                <section className="flex flex-col justify-center items-center max-w-7xl w-[90%] md:w-[95%] mx-auto my-3">
+                <section className="flex flex-col justify-center items-center max-w-7xl w-full pl-4q md:w-[95%] mx-auto my-3">
                     {/* Titulo */}
                     <h2 className="text-2xl md:text-5xl text-white text-center px-4 py-2 md:px-6 md:py-3 bg-[url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-3&color=4f39f6')]">
                         TOP WEEKLYS ALBUMS
@@ -61,7 +61,7 @@ function LandingPageAlt() {
                         ))}
                     </article>
                     {/* Carrusel de Albums */}
-                    <div class="md:hidden overflow-x-auto snap-x snap-mandatory scroll-smooth flex w-full gap-3 py-2 overflow-y-hidden">
+                    <div class="md:hidden overflow-x-auto snap-x snap-mandatory scroll-smooth flex w-full gap-3 py-2 pr-4 overflow-y-hidden">
                         {topalbumdata.map((item) => (
                             <div class="snap-start shrink-0 w-[95%] sm:w-[50%] md:w-[40%]">
                                 <AlbumCard key={item.id} cover={item.cover} topNumber={item.topNumber} title={item.title} author={item.author} year={item.year} />
@@ -69,7 +69,7 @@ function LandingPageAlt() {
                         ))}
                     </div>
                 </section>
-                
+
                 {/* Sección de Notes */}
                 <section className="relative flex flex-col justify-center items-center max-w-7xl w-[90%] md:w-[95%] mx-auto my-3">
                     {/* Titulo */}
