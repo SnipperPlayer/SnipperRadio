@@ -88,7 +88,7 @@ function LandingPageAlt() {
                     >
                         <ul className="leading-[28px] pt-[82.8px] pl-[40px] md:pl-[90px] pr-[10px]" /*font-normal tracking-[1px] word-spacing-[4px]*/>
                             {notesdata.map((note, index) => (
-                                <NoteCard key={index} title={note.title} content={note.content} setShowModal={() => setShowModal(note)} />
+                                <NoteCard key={index} title={note.title} setShowModal={() => setShowModal(note)} />
                             ))}
                         </ul>
                         {/* Textura arrugada */}

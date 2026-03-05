@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NoteCard({ title = 'No title', content = 'No content', setShowModal }) {
+function NoteCard({ title = 'No title', setShowModal }) {
 
     return (
         <>
