@@ -66,6 +66,20 @@
   }
 }
 
+.custom-scrollbar-navy::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scrollbar-navy::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  /* blue-800 */
+  border-radius: 0px;
+}
+
+.custom-scrollbar-navy::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
