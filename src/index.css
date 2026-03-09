@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   /*Imagen de fondo (Ladrillos), estilos globales*/
   background-image: url("./assets/brick-wall-dark.png");
@@ -13,6 +14,56 @@
   font-style: italic;
   font-weight: 900;
   /* font-weight: bold; */
+}
+
+@layer utilities {
+  @keyframes step-up-enhanced {
+    0% {
+      transform: translateY(100%) rotate(0deg);
+    }
+
+    80% {
+      /* Sube a saltos y al llegar al 80% le damos una inclinación */
+      transform: translateY(0%) rotate(-1deg);
+    }
+
+    90% {
+      /* Un pequeño rebote hacia el otro lado */
+      transform: translateY(-2px) rotate(1deg);
+    }
+
+    100% {
+      /* Posición final relajada */
+      transform: translateY(0) rotate(0.5deg);
+    }
+  }
+
+  .animate-modal-up {
+    /* Mantenemos los steps(8) para el efecto 15fps */
+    animation: step-up-enhanced 0.5s steps(8) forwards;
+    /* Mejora: añade una sombra que aparezca de golpe */
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  }
+
+  @keyframes step-down {
+    0% {
+      transform: translateY(0) rotate(0.5deg);
+    }
+
+    15% {
+      /* Un pequeño "temblor" antes de caer */
+      transform: translateY(-5px) rotate(-1deg);
+    }
+
+    100% {
+      transform: translateY(120%) rotate(2deg);
+    }
+  }
+
+  .animate-modal-down {
+    /* Usamos menos pasos (steps) para que la caída se sienta más pesada y rápida */
+    animation: step-down 0.4s steps(6) forwards;
+  }
 }
 
 /* :root {

@@ -31,6 +31,15 @@ function LandingPageAlt() {
     //     setCount(count - 1)
     // };
     const [showModal, setShowModal] = useState(null);
+    const [isExiting, setIsExiting] = useState(false); // Nuevo estado para la salida
+
+    const closeModal = () => {
+        setIsExiting(true); // Iniciamos la animación de salida
+        setTimeout(() => {
+            setShowModal(null); // Cerramos el modal tras 400ms (la duración de la animación)
+            setIsExiting(false);
+        }, 400);
+    };
 
     return (
         <>
@@ -100,12 +109,16 @@ function LandingPageAlt() {
                     </article>
                     {showModal && (
                         <div className="fixed inset-0 w-full h-full flex items-end justify-center z-10 overflow-hidden">
-                            <div className="fixed w-full h-full bg-black opacity-50" onClick={() => setShowModal(null)}></div>
-                            <Modal
-                                setShowModal={() => setShowModal(null)}
-                                title={showModal.title}
-                                content={showModal.content}
-                            />
+                            <div className="fixed w-full h-full bg-black opacity-50" onClick={closeModal}></div>
+
+                            {/* Modal & Animation */}
+                            <div className={`${isExiting ? 'animate-modal-down' : 'animate-modal-up'}`}>
+                                <Modal
+                                    setShowModal={closeModal}
+                                    title={showModal.title}
+                                    content={showModal.content}
+                                />
+                            </div>
                         </div>
                     )}
                 </section>
