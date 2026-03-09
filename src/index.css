@@ -34,7 +34,7 @@
 
     100% {
       /* Posición final relajada */
-      transform: translateY(0) rotate(0.5deg);
+      transform: translateY(0) rotate(0);
     }
   }
 
